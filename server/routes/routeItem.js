@@ -5,5 +5,6 @@ route.get('/', ControllerItem.findAllItem)
 route.post('/', ControllerItem.addItem)
 route.put('/:id', ControllerItem.updateItem)
 route.delete('/:id', ControllerItem.removeItem)
+route.get('/category/:id', ControllerItem.findAllItemByCategory)
 
 module.exports = route

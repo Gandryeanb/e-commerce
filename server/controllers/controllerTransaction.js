@@ -31,7 +31,7 @@ class ControllerTransaction {
         Transaction.find({
             userId : req.params.id
         })
-        .populate('itemsId')
+        .populate('itemsId','name')
         .then(datas => {
             res.status(200).json({
                 data : datas

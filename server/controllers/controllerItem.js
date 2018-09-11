@@ -6,6 +6,25 @@ class ControllerItem {
 
         Item.find()
         .then(datas => {
+
+            res.status(200).json({
+                data : datas
+            })
+        })
+        .catch(err => {
+            res.status(500).json({
+                message : 'error when finding item data',
+                err : err.message
+            })
+        })
+    }
+
+    static findAllItemByCategory(req,res) {
+
+        Item.find({
+            categoryId : req.params.id
+        }) 
+        .then(datas => {
             res.status(200).json({
                 data : datas
             })
