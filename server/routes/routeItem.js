@@ -7,5 +7,6 @@ route.post('/', ControllerItem.addItem)
 route.put('/:id', ControllerItem.updateItem)
 route.delete('/:id', ControllerItem.removeItem)
 route.get('/category/:id', ControllerItem.findAllItemByCategory)
+route.get('/search/:name',ControllerItem.searchKeyUp)
 
 module.exports = route
