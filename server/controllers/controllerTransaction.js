@@ -3,16 +3,23 @@ const Transaction = require('../models/modelTransaction')
 class ControllerTransaction {
 
     static createTransaction(req, res) {
+        // console.log(req.body);
         
-        let newTransaction = {
-            userId : req.body.userId,
-            itemsId : req.body.itemId,
-        }
-
+        
+        // res.status(200).json({
+            //     message : `done`
+            // })
+            let newTransaction = {
+                userId : req.body.userId,
+                itemsId : req.body.itemId,
+            }
+            
         let transaction = new Transaction(newTransaction)
-
+        
         transaction.save()
         .then(data => {
+            console.log('a');
+
             res.status(200).json({
                 messge : `creating transaction success`,
                 data : newTransaction

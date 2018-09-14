@@ -18,33 +18,26 @@ transactionSchema.pre('save', function(next) {
     let itemsDiscticnById = packOfSortedItem[1]
     let itemsGroupById = packOfSortedItem[2]
     priceCalculator(this.itemsId, itemsDiscticnById, (err,totalPrice) => {
-        if (!err) {
-            this.totalPrice = totalPrice[0]
+        for (let i = 0; i < itemsGroupById.length; i++) {
             
-            for (let i = 0; i < itemsGroupById.length; i++) {
+            Item.find({
+                _id : itemsDiscticnById[i]
+            })
+            .then(data => {
                 
-                Item.find({ _id : itemsGroupById[i][0] })
-                .then(data => {
-                    if (data[0].amount - itemsGroupById[i].length >= 0){
-                        return Item.update({ _id : data[0]._id },{ amount : data[0].amount - itemsGroupById[i].length })
+                Item.update({ _id : data[0]._id}, { amount : data[0].amount - itemsGroupById[i].length}, (err,res) => {
+                    if (!err) {
+                        // console.log('success',res);
                     } else {
-                        let err =  new Error('Stock Item is empty') 
-                        next(err);          
+                        console.log(err);
                     }
                 })
-                .then(result => {
-                    next();
-                })
-                .catch(err => {
-                    err =  new Error('Error when updating item amount') 
-                    next(err)
-                })
-            }
-
-        } else {
-            let err =  new Error('Error when calculate total price') 
-            next(err);
-        }  
+            })
+            .catch(err => {
+                console.log('error');
+            })
+        }
+        next()
     })
 });
 const Transaction = mongoose.model('Transaction', transactionSchema);

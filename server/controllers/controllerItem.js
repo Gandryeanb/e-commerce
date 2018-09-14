@@ -1,14 +1,30 @@
 const Item = require('../models/modelItem')
-
+const groupByCategory = require('../helpers/groupByCategory')
 class ControllerItem {
 
-    static findAllItem(req,res){
-
+    static findAll(req,res) {
         Item.find()
+        .populate('categoryId','name')
+        .exec((err,result) => {
+            if (!err) {
+                res.status(200).json({
+                    message: `data success`,
+                    data : result
+                })
+            }
+        })
+    }
+
+    static findAllGroupItem(req,res){
+        
+        Item.find()
+        .populate(`categoryId`,'name')
         .then(datas => {
 
+            let sorted = groupByCategory(datas)
+            
             res.status(200).json({
-                data : datas
+                data : sorted
             })
         })
         .catch(err => {
@@ -34,6 +50,13 @@ class ControllerItem {
                 message : 'error when finding item data',
                 err : err.message
             })
+        })
+    }
+
+    static findAllbyName(req,res) {
+
+        Item.find({
+
         })
 
     }
