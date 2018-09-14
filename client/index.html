@@ -6,316 +6,318 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" crossorigin="anonymous" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script> -->
     <style>
         #asd {
-            /* border: 1px solid black; */
-        }
-        #logo-header {
-            /* border: 1px solid black; */
-        }
-        #logo {
-            color: rgb(23, 128, 136);
-        }
-        #box-content {
-            border: 1px solid black;
-        }
-        .card {
-            
-        }
-        .border-test{
-            border: 1px solid black;
-        }
-        #margin-test {
-            margin-top: 10px;
-        }
-    </style>
+                /* border: 1px solid black; */
+            }
+            #logo-header {
+                /* border: 1px solid black; */
+            }
+            #logo {
+                color: rgb(23, 128, 136);
+            }
+            #box-content {
+                border: 1px solid black;
+            }
+            .card {
+                
+            }
+            .border-test{
+                border: 1px solid black;
+            }
+            #margin-test {
+                margin-top: 10px;
+            }
+            </style>
     <title>Buka Gudang</title>
 </head>
 
 <body>
 
-
-    <div class="ui segment">
-        <div class="ui grid row" id="header-menu">
-            <div class="three wide column" id="logo-header">
-                <h1 id="logo">Buka gudang</h1>
-            </div>
-            <div class="ten wide column" id="logo-header">
-                <div class="ui large form">
-                    <div class="field">
-                        <div class="ui icon input">
-                            <input class="" placeholder="Search animals..." type="text">
-                            <i class="search link icon"></i>
-                        </div>
-                    </div>
+    <div id="app">
+        <div class="ui segment">
+            <div class="ui grid row" id="header-menu">
+                <div class="three wide column" id="logo-header">
+                    <h1 id="logo">Buka gudang</h1>
                 </div>
-            </div>
-            <div class="three wide column" id="logo-header">
-                <div class="menu">
-                    <div class="ui right floated animated teal button" tabindex="0">
-                        <div class="hidden content">
-                            <i class="arrow right icon"></i>
-                        </div>
-                        <div class="visible content">
-                            Login
-                        </div>
-                    </div>
-                    <div class="ui right floated vertical animated teal button" tabindex="0">
-                        <div class="hidden content">
-                            $0 Free
-                        </div>
-                        <div class="visible content">
-                            Register
-                        </div>
-                    </div>
-                    <div class="ui right floated vertical animated teal button" tabindex="0">
-                        <div class="hidden content">Cart</div>
-                        <div class="visible content">
-                            <i class="shop icon"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="ui container box-content">
-
-        <div class="ui grid row" id="margin-test">
-            <div class="three wide column segment">
-
-                <div class="ui small vertical menu">
-                    <div class="item">
-                        <div class="ui icon input">
-                            <input placeholder="Search category.." type="text">
-                            <i class="search icon"></i>
-                        </div>
-                    </div>
-                    <a class="active item">
-                        <div class="ui small teal label">1</div>
-                        category 1
-                    </a>
-                    <a class="item">
-                        <div class="ui small label">51</div>
-                        category 1
-                    </a>
-                    <a class="item">
-                        <div class="ui small label">1</div>
-                        category 1
-                    </a>
-                </div>
-
-            </div>
-            <div class="thirteen wide column segment">
-                <!-- cards items-->
-                <div class="ui link four cards">
-                    <div class="card">
-                        <div class="image">
-                            <img src="/images/avatar2/large/elyse.png">
-                        </div>
-                        <div class="content">
-                            <div class="header">Item name</div>
-                            <div class="meta">
-                                <a>Item Price</a>
-                            </div>
-                            <div class="description">
-                                Item descriptions
-                            </div>
-                        </div>
-                        <div class="extra content">
-                            <span>
-                                <i class="boxes icon"></i>
-                            </span>
-                            <span>
-                                0000
-                            </span>
-                            <button class="ui right floated mini button">
-                                Add to cart
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="image">
-                            <img src="/images/avatar2/large/elyse.png">
-                        </div>
-                        <div class="content">
-                            <div class="header">Elyse</div>
-                            <div class="meta">
-                                <a>Coworker</a>
-                            </div>
-                            <div class="description">
-                                Elyse is a copywriter working in New York.
-                            </div>
-                        </div>
-                        <div class="extra content">
-                            <span class="right floated">
-                                Joined in 2014
-                            </span>
-                            <span>
-                                <i class="user icon"></i>
-                                151 Friends
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="image">
-                            <img src="/images/avatar2/large/elyse.png">
-                        </div>
-                        <div class="content">
-                            <div class="header">Elyse</div>
-                            <div class="meta">
-                                <a>Coworker</a>
-                            </div>
-                            <div class="description">
-                                Elyse is a copywriter working in New York.
-                            </div>
-                        </div>
-                        <div class="extra content">
-                            <span class="right floated">
-                                Joined in 2014
-                            </span>
-                            <span>
-                                <i class="user icon"></i>
-                                151 Friends
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="image">
-                            <img src="/images/avatar2/large/elyse.png">
-                        </div>
-                        <div class="content">
-                            <div class="header">Elyse</div>
-                            <div class="meta">
-                                <a>Coworker</a>
-                            </div>
-                            <div class="description">
-                                Elyse is a copywriter working in New York.
-                            </div>
-                        </div>
-                        <div class="extra content">
-                            <span class="right floated">
-                                Joined in 2014
-                            </span>
-                            <span>
-                                <i class="user icon"></i>
-                                151 Friends
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="image">
-                            <img src="/images/avatar2/large/elyse.png">
-                        </div>
-                        <div class="content">
-                            <div class="header">Elyse</div>
-                            <div class="meta">
-                                <a>Coworker</a>
-                            </div>
-                            <div class="description">
-                                Elyse is a copywriter working in New York.
-                            </div>
-                        </div>
-                        <div class="extra content">
-                            <span class="right floated">
-                                Joined in 2014
-                            </span>
-                            <span>
-                                <i class="user icon"></i>
-                                151 Friends
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <!-- end cards -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal -->
-
-    <div class="ui tiny modal login">
-        <i class="close icon"></i>
-        <div class="header">
-            Register
-        </div>
-        <div class="content">
-            <form class="ui large form">
-                <div class="field">
-                    <div class="two fields">
-                        <div class="field required">
-                            <label>First name</label>
-                            <input name="fname" placeholder="First Name" type="text">
-                        </div>
+                <div class="ten wide column" id="logo-header">
+                    <div class="ui large form">
                         <div class="field">
-                            <label>Last name</label>
-                            <input name="lname" placeholder="Last Name (optional)" type="text">
+                            <div class="ui icon input">
+                                <input class="" placeholder="Search your item.." type="text">
+                                <i class="search link icon"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="field">
-                    <div class="two fields">
-                        <div class="field required">
-                            <label>Email</label>
-                            <input name="fname" placeholder="Email" type="text">
+                <div class="three wide column" id="logo-header">
+                    <div class="menu">
+                        <div class="ui right floated animated teal button" tabindex="0" v-if="isAlreadyLogin" v-on:click="logout">
+                            <div class="hidden content">
+                                <i class="arrow right icon"></i>
+                            </div>
+                            <div class="visible content">
+                                Logout
+                            </div>
                         </div>
-                        <div class="field required">
-                            <label>Password</label>
-                            <input name="lname" placeholder="Password" type="text">
+                        <div v-else="isAlreadyLogin">
+                            <div class="ui right floated animated teal button" id="login-btn" tabindex="0"  v-on:click="login">
+                                <div class="hidden content">
+                                    <i class="arrow right icon"></i>
+                                </div>
+                                <div class="visible content">
+                                    Login
+                                </div>
+                            </div>
+                            <div class="ui right floated vertical animated teal button" id="register-btn" tabindex="0" v-on:click="register">
+                                <div class="hidden content">
+                                    $0 Free
+                                </div>
+                                <div class="visible content">
+                                    Register
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui left floated vertical animated teal button" id="cart-btn" tabindex="0" v-bind:class="{disabled : !isAlreadyLogin}" v-on:click="shopCart">
+                            <div class="hidden content">Cart</div>
+                            <div class="visible content">
+                                <i class="shop icon"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </form>
-        </div>
-        <div class="actions">
-            <div class="ui black deny button">
-                Nope
-            </div>
-            <div class="ui positive right labeled icon button">
-                Submit
-                <i class="checkmark icon"></i>
             </div>
         </div>
-    </div>
 
-    <div class="ui mini modal register">
-        <i class="close icon"></i>
-        <div class="header">
-            Login
+
+        <div class="ui container box-content">
+
+            <div class="ui grid row" id="margin-test">
+                <div class="three wide column segment">
+
+                    <div class="ui small vertical menu">
+                        <div class="item">
+                            <div class="ui icon input">
+                                <input placeholder="Search category.." type="text">
+                                <i class="search icon"></i>
+                            </div>
+                        </div>
+                        <a class="item" v-on:click="loadDataItemUnfiltered()">
+                            <div class="ui small teal label">100++</div>
+                            All
+                        </a>
+                        <a class="item" v-for="category in categories" v-on:click="selectedCategory(category[2])">
+                            <div class="ui small teal label">{{category[1]}}</div>
+                            {{category[0]}}
+                        </a>
+
+                    </div>
+
+                </div>
+                <div class="thirteen wide column segment">
+                    <!-- cards items-->
+                    <div class="ui link four cards">
+                        <div class="card cards-item" v-for="item in items">
+                            <div class="image">
+                                <img src="./assets/img/360x360.png" v-on:click="selectedModalItem(item)">
+                            </div>
+
+                            <div class="content" v-on:click="selectedModalItem(item)">
+                                <div class="header">{{item.name}}</div>
+                                <div class="meta">
+                                    <h3>Rp. {{item.price}}</h3>
+                                </div>
+                                <div class="description">
+                                    {{item.description}}
+                                </div>
+                            </div>
+
+                            <div class="extra content">
+                                <span>
+                                    <i class="boxes icon"></i>
+                                </span>
+                                <span>
+                                    {{item.amount}}
+                                </span>
+                                <button class="ui teal right floated mini button" v-on:click="addCart(item)" v-if="isAlreadyLogin">
+                                    Add to cart
+                                </button>
+                                <button class="ui teal right floated mini button disabled" v-else="isAlreadyLogin">
+                                    Add to cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end cards -->
+                </div>
+            </div>
         </div>
-        <div class="content">
-            <form class="ui large form">
-                <div class="field">
+
+        <!-- Modal -->
+
+        <div class="ui mini modal" id="item-modal">
+            <div class="header">
+                {{ modalItem.name }}
+            </div>
+            <div class="image">
+                <img src="./assets/img/360x360.png">
+            </div>
+            <div class="content">
+                <h2>Rp.{{ modalItem.price }}</h2>
+                <h4>Item description :</h4>
+                <p>{{ modalItem.description }}<p>
+            </div>
+            <div class="actions">
+                <div class="ui black deny button">
+                    Nope
+                </div>
+                <div class="ui teal deny right labeled icon button" v-on:click="addCart(modalItem)" v-if="isAlreadyLogin">
+                    add to Cart
+                    <i class="shop icon"></i>
+                </div>
+                <div class="ui teal deny right labeled icon button disabled" v-on:click="addCart(modalItem)" v-else="isAlreadyLogin">
+                    add to Cart
+                    <i class="shop icon"></i>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="ui tiny modal login" id="register-modal">
+            <div class="header">
+                Register
+            </div>
+            <div class="content">
+                <form class="ui large form">
                     <div class="field">
-                        <label>Email</label>
-                        <input name="fname" placeholder="Email" type="text">
+                        <div class="two fields">
+                            <div class="field required">
+                                <label>First name</label>
+                                <input name="fname" placeholder="First Name" type="text">
+                            </div>
+                            <div class="field">
+                                <label>Last name</label>
+                                <input name="lname" placeholder="Last Name (optional)" type="text">
+                            </div>
+                        </div>
                     </div>
                     <div class="field">
-                        <label>Password</label>
-                        <input name="lname" placeholder="Password" type="text">
+                        <div class="two fields">
+                            <div class="field required">
+                                <label>Email</label>
+                                <input name="fname" placeholder="Email" type="text">
+                            </div>
+                            <div class="field required">
+                                <label>Password</label>
+                                <input name="lname" placeholder="Password" type="password">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="actions">
+                <div class="ui black deny button">
+                    Nope
+                </div>
+                <div class="ui teal deny right labeled icon button">
+                    Submit
+                    <i class="checkmark icon"></i>
+                </div>
+            </div>
+        </div>
+
+        <div id="loginForm">
+            <div class="ui mini modal" id="login-modal">
+                <div class="header">
+                    Login
+                </div>
+                <div class="content">
+                    <form class="ui large form">
+                        <div class="field">
+                            <div class="field">
+                                <label>Email</label>
+                                <input name="fname" placeholder="Email" type="text" id="login-form" v-model="emailVal">
+                            </div>
+                            <div class="field">
+                                <label>Password</label>
+                                <input name="lname" placeholder="Password" type="text" id="register-form" v-model="passVal">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="actions">
+                    <div class="ui black deny button">
+                        Nope
+                    </div>
+                    <div v-on:click="submitLogin" class="ui teal deny labeled icon button">
+                        Submit
+                        <i class="checkmark icon"></i>
                     </div>
                 </div>
-            </form>
-        </div>
-        <div class="actions">
-            <div class="ui black deny button">
-                Nope
-            </div>
-            <div class="ui positive right labeled icon button">
-                Submit
-                <i class="checkmark icon"></i>
             </div>
         </div>
-    </div>
 
-    <script src="./assets//js/scripts.js"></script>
+        <div id="cartForm">
+            <div class="ui small modal" id="cart-modal">
+                <div class="header">
+                    <i class="shop icon"></i> Your Cart
+                </div>
+                <div class="content">
+                    <div class="ui form">
+                        <div class="fields">
+                            <div class="nine wide field">
+                                <h4>Item name</h4>
+                            </div>
+                            <div class="two wide field">
+                                <h4>Amount</h4>
+                            </div>
+                            <div class="five wide field">
+                                <h4>Total Price</h4>
+                            </div>
+                        </div>
+                        <div class="fields" v-for="items in cart">
+                            <div class="nine wide field">
+                                <input name="itemName" placeholder="Item Name" type="text" readonly v-model="items[0].name">
+                            </div>
+                            <div class="two wide field">
+                                <input name="buyAmount" placeholder="amount" type="text" v-model="items[1]">
+                            </div>
+                            <div class="five wide field">
+                                <input name="buyAmount" placeholder="price" type="text" readonly v-model="items[0].price * items[1]">
+                            </div>
+                        </div>
+                        <div class="fields">
+                            <div class="eleven wide field">
+
+                            </div>
+                            <div class="five wide field">
+                                <h4>Total :</h4>
+                                <input name="buyAmount" placeholder="price" type="text" readonly v-model="totalPriceCart">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="actions">
+                    <div class="ui black deny button">
+                        Back
+                    </div>
+                    <div v-on:click="submitCheckOut()" class="ui teal deny labeled icon button">
+                        Pay with pray
+                        <i class="dollar sign icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- app vue -->
+    </div>
+    <!-- app vue -->
+    <script src="./assets/js/scripts.js"></script>
 </body>
 
 </html>
