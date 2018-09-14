@@ -5,6 +5,8 @@ var app = new Vue({
     data: {
         isAlreadyLogin : false,
 
+        valKeyUpItem : '',
+
         categories: [],
         items: [],
         emailVal: '',
@@ -21,6 +23,37 @@ var app = new Vue({
         this.loadDataItemUnfiltered()
         this.loadDataItems()
     },
+    watch : {
+        valKeyUpItem : function () {
+            
+            console.log(this.valKeyUpItem)
+
+            let self = this
+
+            if (this.valKeyUpItem !== '') {
+                axios({
+                    method : "get",
+                    url : `http://localhost:3000/item/search/${this.valKeyUpItem}`
+                })
+                .then (response => {
+                    console.log(response);
+                    console.log(self.valKeyUpItem);
+                    
+                    let tmp = []
+                    for (let i = 0; i < response.data.data.length; i++) {
+                        tmp.push(response.data.data[i])
+                    }
+                    self.items = tmp
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+            } else {
+                // this.
+                this.loadDataItemUnfiltered()
+            }
+        }
+    },
     methods: {
         login : function () {
             $('#login-modal').modal('setting', 'transition', 'fly up').modal('show');
@@ -31,6 +64,9 @@ var app = new Vue({
         shopCart : function() {
             $('#cart-modal').modal('setting', 'transition', 'fly up').modal('show');
         },
+
+
+
         selectedCategory: function (id) {
             axios({
                     method: "get",
@@ -148,6 +184,30 @@ var app = new Vue({
                     this.totalPriceCart += Number(item.price)
                 }
             }
+        },
+        searchItemKeyUp: function () {
+            let self = this
+            
+            console.log(this.valKeyUpItem);
+            if (true) {
+                axios({
+                    method : "get",
+                    url : `http://localhost:3000/item/search/${this.valKeyUpItem}`
+                }),
+                then (response => {
+                    let tmp = []
+                    for (let i = 0; i < response.data.data.length; i++) {
+                        tmp.push(response.data.data[i])
+                    }
+                    
+                    return tmp
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+            }
+
+
         },
         submitCheckOut : function () {
             
