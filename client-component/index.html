@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" crossorigin="anonymous" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script> -->
+    <style>
+            #logo {
+                color: rgb(23, 128, 136);
+            }
+            #box-content {
+                border: 1px solid black;
+            }
+            #margin-test {
+                margin-top: 10px;
+            }
+            </style>
+    <title>Buka Gudang</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <vue-nav @val-key-up="valKeyUp=$event" @log-status="isAlreadyLogin=$event" v-bind:info-cart="cart" v-bind:info-price-cart="totalPriceCart" @refresh="fnRefresh=$event"></vue-nav>
+        <vue-content v-bind:key-up="valKeyUp" v-bind:log-status="isAlreadyLogin" @infocart="cart=$event" @infototalpricecart="totalPriceCart=$event" v-bind:fn-Refresh="fnRefresh"></vue-content> 
+    </div>
+    <!-- app vue -->
+    <script src="./assets/js/content/content-cards.js"></script>
+    <script src="./assets/js/content/content-category.js"></script>
+    <script src="./assets/js/content/content .js"></script>
+    <script src="./assets/js/navBar/nav-search-form.js"></script>
+    <script src="./assets/js/navBar/nav-cart-btn.js"></script>
+    <script src="./assets/js/navBar/nav-register-btn.js"></script>
+    <script src="./assets/js/navBar/nav-login-btn.js"></script>
+    <script src="./assets/js/navBar/nav-logout-btn.js"></script>
+    <script src="./assets/js/navBar/nav-bar.js"></script>
+    <script src="./assets/js/scripts.js"></script>
+</body>
+
+</html>
