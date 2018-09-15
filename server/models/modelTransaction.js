@@ -27,7 +27,7 @@ transactionSchema.pre('save', function(next) {
                 
                 Item.update({ _id : data[0]._id}, { amount : data[0].amount - itemsGroupById[i].length}, (err,res) => {
                     if (!err) {
-                        // console.log('success',res);
+                        console.log('success updating items',res);
                     } else {
                         console.log(err);
                     }

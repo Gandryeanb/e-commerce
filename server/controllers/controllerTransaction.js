@@ -18,7 +18,6 @@ class ControllerTransaction {
         
         transaction.save()
         .then(data => {
-            console.log('a');
 
             res.status(200).json({
                 messge : `creating transaction success`,
