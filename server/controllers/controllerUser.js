@@ -1,6 +1,5 @@
 const User = require('../models/modelUser')
 const jwt = require('jsonwebtoken')
-const passEncryptor = require('../helpers/passEncryptor')
 const isPassMatch = require('../helpers/isPassMatch')
 
 class ControllerUser {
@@ -9,6 +8,7 @@ class ControllerUser {
 
         User.find({_id : req.decoded._id})
         .then (data => {
+            
             res.status(200).json({
                 success : true,
                 data : data
@@ -29,7 +29,7 @@ class ControllerUser {
             fname : req.body.fname,
             lname : req.body.lname,
             email : req.body.email,
-            password : passEncryptor(req.body.password)
+            password : req.body.password
         }
 
         let user = new User(newUser)

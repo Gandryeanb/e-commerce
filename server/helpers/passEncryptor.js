@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt')
 
-const passEncryptor = (pass) => {
-    const hash = bcrypt.hashSync(pass, Number(process.env.SALT_ROUNDS))
+const passEncryptor = (target) => {
+    const hash = bcrypt.hashSync(String(target), Number(process.env.SALT_ROUNDS))
 
     return hash
 }
