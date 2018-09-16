@@ -5,6 +5,24 @@ const isPassMatch = require('../helpers/isPassMatch')
 
 class ControllerUser {
 
+    static findUser(req,res) {
+
+        User.find({_id : req.decoded._id})
+        .then (data => {
+            res.status(200).json({
+                success : true,
+                data : data
+            })
+        }) 
+        .catch (err => {
+            res.status(500).json({
+                success : false,
+                message : `error when finding user data`
+            })
+        })
+
+    }
+
     static regist(req,res) {
 
         let newUser = {
