@@ -2,7 +2,7 @@ Vue.component('vue-content-cards',{
     data : () => {
         return {
             isAlreadyLogin : false,
-            refreshItem : false,
+            refreshItem : 0,
             items : [],
             modalItem : [],
             cart : [],
@@ -18,7 +18,7 @@ Vue.component('vue-content-cards',{
     },
     props : ["itemsData","statsLog","fnRefresh"],
     watch : {
-        fnRefresh : function () {
+        fnRefresh : function () {            
             this.cart = [],
             this.totalPriceCart = 0
         },
@@ -34,8 +34,9 @@ Vue.component('vue-content-cards',{
         }
     },
     methods : {
-        addCart : function (item) {            
+        addCart : function (item) {    
             if (this.cart.length == 0) {
+                console.log('masuk add card');
                 this.cart.push([item,1])
                 this.totalPriceCart += Number(item.price)
             } else {

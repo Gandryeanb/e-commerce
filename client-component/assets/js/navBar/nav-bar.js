@@ -21,8 +21,7 @@ Vue.component('vue-nav', {
             this.$emit('val-key-up',this.searchKeyUp)
         },
         fnRefresh : function () {            
-            this.$emit('refresh',true)
-            this.fnRefresh = false
+            this.$emit('refresh',this.fnRefresh)
         },
         isAlreadyLogin : function(val) {
             this.$emit("log-status",this.isAlreadyLogin)

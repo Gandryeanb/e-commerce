@@ -29,9 +29,6 @@ Vue.component('vue-content',{
         fnRefresh : function (val) {
             this.refreshItem = val
         },
-        totalPriceCart : function () {
-            this.refreshItem = false
-        },
         logStatus : function () {
             this.isAlreadyLogin = this.logStatus
         },

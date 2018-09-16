@@ -4,6 +4,8 @@ Vue.component("vue-nav-cart-btn",{
             isAlreadyLogin : false,
             buyable : true,
 
+            counterBuy : 0,
+
             items : [],
             cart : []
         }
@@ -16,6 +18,15 @@ Vue.component("vue-nav-cart-btn",{
         }
     },
     watch : {
+        counterItem : function () {
+            $('#cart-btn')
+                .transition({
+                    animation : 'jiggle',
+                    duration  : 800,
+                    interval  : 200
+                })
+            ;
+        },
         logStatus : function (val) {
             this.isAlreadyLogin = val 
         },
@@ -45,7 +56,17 @@ Vue.component("vue-nav-cart-btn",{
 
                 return res  
             }
-            
+        },
+        counterItem : {
+            get : function() {
+                let res = 0
+
+                for (let i = 0; i < this.cart.length; i++) {
+                    res += this.cart[i][1]
+                }
+
+                return `${res} Items`
+            }
         }
     },
     methods : {
@@ -77,13 +98,14 @@ Vue.component("vue-nav-cart-btn",{
                 .then(response => {
                     console.log('berhasil create transaction');
                     self.cart = []
-                    this.totalPriceCart = 0
-                    this.categories = []
-                    this.items = []
-                    this.$emit("refreshItem",true)
+                    self.totalPriceCart = 0
+                    self.categories = []
+                    self.items = []
+                    self.counterBuy++
+                    self.$emit("refreshItem",self.counterBuy)
                 })
                 .catch(error => {
-                    this.cart = []
+                    self.cart = []
                     console.log('gagal create transaction');
                     console.log(error);
                 })
@@ -98,7 +120,7 @@ Vue.component("vue-nav-cart-btn",{
     template : `
     <div>
         <div class="ui left floated vertical animated teal button" id="cart-btn" tabindex="0" v-bind:class="{disabled : !isAlreadyLogin}" v-on:click="shopCart">
-            <div class="hidden content">Cart</div>
+            <div class="hidden content">{{counterItem}}</div>
             <div class="visible content">
                 <i class="shop icon"></i>
             </div>
@@ -127,7 +149,7 @@ Vue.component("vue-nav-cart-btn",{
                                 <input name="itemName" placeholder="Item Name" type="text" readonly v-model="items[0].name">
                             </div>
                             <div class="two wide field">
-                                <input name="buyAmount" placeholder="amount" type="number" v-model="items[1]">
+                                <input name="buyAmount" placeholder="amount" type="number" min="0" v-model="items[1]">
                             </div>
                             <div class="five wide field">
                                 <input name="buyAmount" placeholder="price" type="text" readonly v-model="items[0].price * items[1]">
