@@ -22,8 +22,8 @@ Vue.component("vue-nav-login-btn", {
                 method: 'post',
                 url: 'http://localhost:3000/user/login',
                 data: {
-                    email: 'JohnDoe@mail.com',
-                    password: '1234'
+                    email: this.valEmailLogin,
+                    password: this.valPassLogin
                 }
             })
             .then(response => {

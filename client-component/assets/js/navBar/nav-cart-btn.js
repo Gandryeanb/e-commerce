@@ -93,7 +93,8 @@ Vue.component("vue-nav-cart-btn",{
                     data : {
                         userId : UserId,
                         itemId : items
-                    }
+                    },
+                    headers : {token}
                 })
                 .then(response => {
                     console.log('berhasil create transaction');
