@@ -12,16 +12,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
     <!-- <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script> -->
     <style>
-            #logo {
-                color: rgb(23, 128, 136);
-            }
-            #box-content {
-                border: 1px solid black;
-            }
-            #margin-test {
-                margin-top: 10px;
-            }
-            </style>
+        #userPhoto {
+            margin-top: 20px;
+        }    
+        #logo {
+            color: rgb(23, 128, 136);
+        }
+        #box-content {
+            border: 1px solid black;
+        }
+        #margin-test {
+            margin-top: 10px;
+        }
+    </style>
     <title>Buka Gudang</title>
 </head>
 
@@ -32,6 +35,7 @@
         <vue-content v-bind:key-up="valKeyUp" v-bind:log-status="isAlreadyLogin" @infocart="cart=$event" @infototalpricecart="totalPriceCart=$event" v-bind:fn-Refresh="fnRefresh"></vue-content> 
     </div>
     <!-- app vue -->
+    <script src="./assets/js/content/content-user-profile.js" ></script>
     <script src="./assets/js/content/content-cards.js"></script>
     <script src="./assets/js/content/content-category.js"></script>
     <script src="./assets/js/content/content .js"></script>
