@@ -15,15 +15,14 @@ var app = new Vue({
         totalPriceCart : 0
     },
     watch : {
+
         fnRefresh : function () {
             if (this.fnRefresh) {
                 this.fnRefresh === false
             }
-        }, 
+        }
     },
     methods: {
-        
-        
-        
+
     }
 })

@@ -34,36 +34,9 @@
         <vue-nav @val-key-up="valKeyUp=$event" @log-status="isAlreadyLogin=$event" v-bind:info-cart="cart" v-bind:info-price-cart="totalPriceCart" @refresh="fnRefresh=$event"></vue-nav>
         <vue-content v-bind:key-up="valKeyUp" v-bind:log-status="isAlreadyLogin" @infocart="cart=$event" @infototalpricecart="totalPriceCart=$event" v-bind:fn-Refresh="fnRefresh"></vue-content> 
     </div>
-    <!-- app vue -->
-
-    <div class="ui long modal" id="transactionModal">
-            <div class="header">
-            <i class="file alternate icon"></i>
-                Transaction List
-            </div>
-            <div class="content">
+        <!-- app vue -->
+        
     
-                <div class="ui styled fluid accordion" v-on:click="accordion">
-                    <div class="title active">
-                    <i class="dropdown icon"></i>
-                    What is a dog?
-                    </div>
-                    <div class="content active">
-                    <p class="transition visible" style="display: block !important;">A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world.</p>
-                    </div>
-                </div>
-                
-            </div>
-            <div class="actions">
-                <div class="ui button deny">Cancel</div>
-                <div class="ui button deny">OK</div>
-            </div>
-        </div>
-    
-
-    <script>    
-        $('.ui.accordion').accordion();
-    </script>
     <script src="./assets/js/content/content-user-profile.js" ></script>
     <script src="./assets/js/content/content-cards.js"></script>
     <script src="./assets/js/content/content-category.js"></script>

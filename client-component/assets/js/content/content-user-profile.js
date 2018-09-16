@@ -29,8 +29,6 @@ Vue.component('vue-content-user-profile',{
         </div>
     </div>
 
-    
-
     <div class="ui mini modal" id="topup">
         <div class="header">
             
@@ -54,6 +52,56 @@ Vue.component('vue-content-user-profile',{
         </div>
     </div>
 
+    <div class="ui longer modal" id="transactionModal">
+        <div class="header">
+        <i class="file alternate icon"></i>
+            Transaction List
+        </div>
+        <div class="content">
+
+        <table class="ui unstackable table" v-for="list in transactionData">
+            <thead>
+            <tr>
+                <th>Date</th>
+                <th>Order id</th>
+                <th>Status</th>
+                <th>Items</th>
+                <th>Price/pcs</th>
+                <th>Amount</th>
+                <th class="right aligned">Total Price</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{list.date.date}} - {{list.date.month}} - {{list.date.year}}</td>
+                <td>{{list._id}}</td>
+                <td>Payed and delivered</td>
+                <td>
+                    <p v-for="item in list.items">
+                        {{item.itemName}}
+                    </p>
+                </td>
+                <td>
+                    <p v-for="item in list.items">
+                        {{item.price}}
+                    </p>
+                </td>
+                <td>
+                    <p v-for="item in list.items">
+                        {{item.amount}}
+                    </p>
+                </td>
+                <td class="right aligned">{{list.totalPrice}}</td>
+            </tr>
+            </tbody>
+        </table>
+
+        </div>
+        <div class="actions">
+            <div class="ui button teal deny">Dismiss</div>
+        </div>
+    </div>
+
     </div>
     `,
     data () {
@@ -64,8 +112,6 @@ Vue.component('vue-content-user-profile',{
     },
     created () {
         this.getDataUser()        
-    },
-    mounted () {
     },
     methods : {
         getDataUser () {
@@ -106,7 +152,7 @@ Vue.component('vue-content-user-profile',{
             $('#transactionModal').modal('setting', 'transition', 'pulse').modal('show');
         },
         topUp() {
-            $('.long.topup').modal('setting', 'transition', 'pulse').modal('show');
+            $('.longer.topup').modal('setting', 'transition', 'pulse').modal('show');
         }
 
     },

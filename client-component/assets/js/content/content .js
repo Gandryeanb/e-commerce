@@ -2,6 +2,7 @@ Vue.component('vue-content',{
     data : () => {
         return {
             items : [],
+
             categories : [],
             cart :[],
             totalPriceCart : 0,
