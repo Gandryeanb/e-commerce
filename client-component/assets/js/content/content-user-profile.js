@@ -19,7 +19,7 @@ Vue.component('vue-content-user-profile',{
                 <span>{{userData.deposit}}</span>        
             </div>    
             <div class="ui compact menu" style="margin-top : 15px; margin-bottom:20px;">
-                <div class="link item" v-on:click="topUp">
+                <div class="link item disabled" v-on:click="topUp">
                     <i class="credit card icon"></i>
                 </div>
                 <div class="link teal item" v-on:click="getTransactionUser">
